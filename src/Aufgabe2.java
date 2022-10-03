@@ -17,7 +17,7 @@ public class Aufgabe2 {
             System.out.println("Zahl 1 ist kleiner als Zahl 2 und Mini");
         }
         if ((randomNumber1<30) || (randomNumber2 < 30)) {
-            System.out.println("Eine der beiden ist kleiner als 30");
+            System.out.println("Eine der Beiden ist kleiner als 30");
         }
 
         if ((randomNumber1<50) && (randomNumber2 != 50)) {
