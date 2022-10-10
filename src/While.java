@@ -12,8 +12,7 @@ public class While {
 
             if ((randomnr1 == 15 || randomnr1 == 25)) {
                 isFinished = true;
-            }
-            else {
+            } else {
                 sum = sum + randomnr1;
             }
         }
