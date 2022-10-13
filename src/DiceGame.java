@@ -8,7 +8,8 @@ public class DiceGame {
         int Player2wins = 0;
         int Draws = 0;
         boolean isfinished = false;
-        System.out.println("Willst du spielen? wenn ja 1 wenn nein 2");
+        System.out.println("Spiel Starten 1 " +
+                            "Spiel Beenden 2");
 
         while (!isfinished) {
             Scanner scanner = new Scanner(System.in);
