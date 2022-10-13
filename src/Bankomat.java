@@ -22,9 +22,9 @@ public class Bankomat {
             }
             if (selection == 2) {
                 System.out.println("Wieviel würden sie gerne abheben?");
-                int withdraw = scanner.nextInt();
-                balance = balance - withdraw;
-                System.out.println("Sie haben " + withdraw + "€ abgehoben!");
+                int cash = scanner.nextInt();
+                balance = balance - cash;
+                System.out.println("Sie haben " + cash + "€ abgehoben!");
             }
             if (selection == 3) {
                 System.out.println("Ihr Kontostand beträgt:" + balance + "€");
