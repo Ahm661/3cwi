@@ -4,15 +4,17 @@ import java.util.Scanner;
 public class DiceGame {
     public static void main(String[] args) {
         Random random = new Random();
-        int Player1wins = 0;
-        int Player2wins = 0;
-        int Draws = 0;
-        boolean isfinished = false;
+        Scanner scanner = new Scanner(System.in);
+
+        int player1Wins = 0;
+        int player2Wins = 0;
+        int draws = 0;
+        boolean isFinished = false;
         System.out.println("Spiel Starten 1 " +
                             "Spiel Beenden 2");
 
-        while (!isfinished) {
-            Scanner scanner = new Scanner(System.in);
+        while (!isFinished) {
+
             int selection = scanner.nextInt();
             if (selection == 1) {
                 for (int i = 0; i < 6; i++) {
@@ -22,18 +24,18 @@ public class DiceGame {
                     System.out.println("Player1:" + player + "Player2:" + ai);
 
                     if (player > ai) {
-                        Player1wins++;
+                        player1Wins++;
                     } else if (ai > player) {
-                        Player2wins++;
+                        player2Wins++;
                     } else {
-                        Draws++;
+                        draws++;
                     }
                 }
             } else if (selection == 2) {
-                isfinished = true;
-                System.out.println("Player1 won:" + Player1wins + " Times ");
-                System.out.println("Player2 won:" + Player2wins + " Times ");
-                System.out.println("Draws:" + Draws + " Times ");
+                isFinished = true;
+                System.out.println("Player1 won:" + player1Wins + " Times ");
+                System.out.println("Player2 won:" + player2Wins + " Times ");
+                System.out.println("Draws:" + draws + " Times ");
             }
 
 
