@@ -1,20 +1,39 @@
 package OO;
 
-public class car {
-    public int FuelConsumption;
-    public int FuelAmount;
-    public String Color;
-    public String Seriennummer;
-    public int Geschwindigkeit;
+public class Car {
+    private String color;
+    private int highestSpeed;
+    private float fuelConsumption;
+    private Engine engine;
+    private Producer producer;
+    private int price;
+    private int range;
 
-    public void Drive (){
-        this.FuelAmount = this.FuelAmount - FuelConsumption;
-        this.Geschwindigkeit = 50;
-        System.out.println("Ich fahre");
+    public Car(String color, int highestSpeed, float fuelConsumption, Engine engine, Producer producer, int price) {
+        this.color = color;
+        this.highestSpeed = highestSpeed;
+        this.fuelConsumption = fuelConsumption;
+        this.engine = engine;
+        this.producer = producer;
+        this.price = price;
     }
-    public void Bremsen (){
-        this.Geschwindigkeit = 0;
-        System.out.println("Ich Bremse");
+
+    public float getPrice() {
+        float value = this.price - (this.producer.getRabatt() * price);
+        return value;
+    }
+
+    public float getFuelConsumption() {
+        if (range > 50000) {
+            fuelConsumption = this.fuelConsumption * 1.098f;
+        }
+        return fuelConsumption;
+    }
+
+    public int getDrive(int km)
+    {
+        this.range += this.engine.getHorsePower() * km;
+        System.out.println("Driving");
+        return 0;
     }
 }
-

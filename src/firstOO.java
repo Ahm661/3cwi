@@ -23,9 +23,8 @@ public class firstOO {
         System.out.println(c1.Color);
         System.out.println(c1.FuelConsumption);
         System.out.println("Car2: ");
-        System.out.println(c2.FuelConsumption);
         System.out.println(c2.Seriennummer);
         System.out.println(c2.Color);
-
+        System.out.println(c2.FuelConsumption);
     }
 }
