@@ -1,25 +1,32 @@
 package JavaFirst;
 
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
+import java.math.*;
 
-public class LetterFilter {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Geben Sie einen Text ein: ");
-        String input = sc.nextLine();
-        String upperCase = "";
-        String lowerCase = "";
+class Solution {
 
-        for (int i = 0; i < input.length(); i++) {
-            char c = input.charAt(i);
-            if (Character.isUpperCase(c)) {
-                upperCase += c;
-            } else if (Character.isLowerCase(c)) {
-                lowerCase += c;
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        String t = in.nextLine();
+        String uppers = "";
+        String lowers = "";
+        for(char c: t.toCharArray())
+        {
+            if(Character.isUpperCase(c))
+            {
+                uppers += c;
+
             }
+            else
+            {
+                lowers += c;
+            }
+
         }
 
-        System.out.println(upperCase);
-        System.out.println(lowerCase);
+        System.out.println(uppers);
+        System.out.println(lowers);
     }
+
 }
