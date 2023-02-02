@@ -19,7 +19,7 @@ public class LetterFilter {
             }
         }
 
-        System.out.println("Großbuchstaben: " + upperCase);
-        System.out.println("Kleinbuchstaben: " + lowerCase);
+        System.out.println(upperCase);
+        System.out.println(lowerCase);
     }
 }
