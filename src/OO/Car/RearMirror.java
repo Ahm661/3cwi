@@ -1,9 +1,9 @@
-package OO;
-public class RearMirror1 {
+package OO.Car;
+public class RearMirror {
     private int size;
     private int position;
 
-    public RearMirror1(int size, int position) {
+    public RearMirror(int size, int position) {
         this.size = size;
         this.position = position;
     }

@@ -15,8 +15,8 @@ public class Remote {
 
     public void turnOn()
     {
-        this.battery1.setChargingStatus(this.battery1.getChargingStatus()-5);
-        this.battery2.setChargingStatus(this.battery2.getChargingStatus()-5);
+        this.battery1.setElectricityConsumption(this.battery1.getElectricityConsumption()-5);
+        this.battery2.setElectricityConsumption(this.battery2.getElectricityConsumption()-5);
         System.out.println("Verbraucher angeschlossen");
     }
 

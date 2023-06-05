@@ -1,124 +1,68 @@
-package OO.Handy;
-import java.util.ArrayList;
-import java.util.List;
-//ChatGPT wird korrigiert
-public class CAMERRA {
-    private String id;
-    private String phoneNumber;
+package OO;
 
-    public void SimCard(String id, String phoneNumber) {
-        this.id = id;
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-}
 
 public class Camera {
-    private final String id;
-    private final int resolution;
+    private int pixel;
 
-    public Camera(String id, int resolution) {
-        this.id = id;
-        this.resolution = resolution;
+    private File.FILE_SIZE pictureSize;
+    private int weight;
+    private String color;
+    private Producer producer;
+    private Lens lens;
+    private SDCard sDcard;
+    private int filenumber = 0;
+
+    public Camera(int pixel, int weight, String color, Producer producer, Lens lens, SDCard sDcard) {
+        this.pixel = pixel;
+        this.weight = weight;
+        this.color = color;
+        this.producer = producer;
+        this.lens = lens;
+        this.sDcard = sDcard;
+        this.pictureSize = File.FILE_SIZE.mittel;
     }
 
-    public String getId() {
-        return id;
-    }
 
-    public int getResolution() {
-        return resolution;
-    }
-
-    public File takePhoto() {
-        int fileSize = resolution * 1024; // assuming each pixel takes up 1 byte
-        return new File("photo_" + System.currentTimeMillis(), fileSize);
-    }
-}
-
-public class File {
-    private final String name;
-    private final int size;
-
-    public File(String name, int size) {
-        this.name = name;
-        this.size = size;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getSize() {
-        return size;
-    }
-}
-
-public class Handy {
-    private final SimCard simCard;
-    private final SDcard sdCard;
-    private final Camera camera;
-
-    public Handy(SimCard simCard, SDcard sdCard, Camera camera) {
-        this.simCard = simCard;
-        this.sdCard = sdCard;
-        this.camera = camera;
-    }
-
-    public boolean makePhoto() {
-        File photo = camera.takePhoto();
-        return sdCard.addFile(photo);
-    }
-
-    public List<File> getAllFiles() {
-        return sdCard.getFiles();
-    }
-
-    // Login methods
-    public boolean login(String username, String password) {
-        // implementation of authentication
-        return true;
-    }
-
-    public void logout() {
-        // implementation of logout
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        // create components
-        SimCard simCard = new SimCard("123456", "0123456789");
-        SDcard sdCard = new SDcard("ABC", 100000000);
-        Camera camera = new Camera("DEF", 800);
-
-        // create phone
-        Handy handy = new Handy(simCard, sdCard, camera);
-
-        // take photo
-        handy.makePhoto();
-
-        // display all files
-        List<File> files = handy.getAllFiles();
-        for (File file : files) {
-            System.out.println(file.getName());
-        }
-
-        // login
-        if (handy.login("username", "password")) {
-            System.out.println("Login successful");
+    public void makePicture() {
+        if (pictureSize == File.FILE_SIZE.klein) {
+            setPixel(2);
+        } else if (pictureSize == File.FILE_SIZE.mittel) {
+            setPixel(4);
+        } else if (pictureSize == File.FILE_SIZE.groß) {
+            setPixel(6);
         } else {
-            System.out.println("Login failed");
+            System.out.println("Error");
         }
 
-        // logout
-        handy.logout();
+        String name = "DC0_" + filenumber;
+        File file = new File(name, "jpeg", pictureSize);
+
+        this.sDcard.addFile(file);
+        filenumber++;
+
+    }
+
+    public SDCard getsDcard() {
+        return sDcard;
+    }
+
+    public void setsDcard(SDCard sDcard) {
+        this.sDcard = sDcard;
+    }
+
+    public File.FILE_SIZE getPictureSize() {
+        return pictureSize;
+    }
+
+    public void setPictureSize(File.FILE_SIZE pictureSize) {
+        this.pictureSize = pictureSize;
+    }
+
+    public int getPixel() {
+        return pixel;
+    }
+
+    public void setPixel(int pixel) {
+        this.pixel = pixel;
     }
 }

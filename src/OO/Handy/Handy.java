@@ -16,7 +16,8 @@ public class Handy {
             return;
         }
 
-        File photo = kamera.makePhoto();
+        File photo = camera.makePhoto();
+        SDcard speicherkarte;
         speicherkarte.addFile(photo);
     }
 
