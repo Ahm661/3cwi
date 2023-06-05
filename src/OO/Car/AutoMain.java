@@ -1,5 +1,8 @@
-package OO;
-public class Car {
+package OO.Car;
+
+
+
+public class AutoMain{
     // Instanz /Gedächtnis
     private int fuelConsumption;
     private int fuelAmount;
@@ -9,7 +12,7 @@ public class Car {
     private String serialNumber;
     private String color;
 
-    public Car(int fuelConsumption, int fuelAmount, int totalFuel, Engine engine, String brand, String serialNumber, String color) {
+    public void Car(int fuelConsumption, int fuelAmount, int totalFuel, Engine engine, String brand, String serialNumber, String color) {
         this.fuelConsumption = fuelConsumption;
         this.fuelAmount = fuelAmount;
         this.totalFuel = totalFuel;
@@ -112,4 +115,4 @@ public class Car {
         return serialNumber;
     }
 
-}}
+}

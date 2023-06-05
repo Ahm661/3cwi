@@ -1,4 +1,3 @@
-import OO.car;
 public class firstOO {
     public static void main(String[] args) {
         int a = 7;
