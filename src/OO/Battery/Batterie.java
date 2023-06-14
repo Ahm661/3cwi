@@ -12,6 +12,7 @@ public class Batterie {
         this.name = name;
         this.color = color;
         this.electricityConsumption = electricityConsumption;
+        STATUS status;
         this.Status = status;
     }
 

@@ -2,7 +2,7 @@ package OO.Car;
 
 
 
-public class AutoMain{
+public class Main{
     // Instanz /Gedächtnis
     private int fuelConsumption;
     private int fuelAmount;
